@@ -1,32 +1,25 @@
 let arms = ["Rock","Paper","Scissors"];
-let humanScore = 0;
+const playerDisplay = document.getElementById("userScore");
+const computerDisplay = document.getElementById("computerScore");
+const resultDisplay = document.getElementById("result");
+let userScore = 0;
 let computerScore = 0;
-function getComputerChoice() {
-    return arms[Math.floor((Math.random() * arms.length) + 1)];
-}
-function playRound(userChoice, computerChoice){
+function playGame(userChoice){
+    let result;
+    let computerChoice = arms[Math.floor(Math.random() * arms.length)];
     if (userChoice === computerChoice) {
-        console.log("It's a tie!");
+        result = "It's a tie!";
     } else if (userChoice === "Rock" && computerChoice === "Scissors" ||
-               userChoice === "Paper" && computerChoice === "Rock" ||
-               userChoice === "Scissors" && computerChoice === "Paper") {
-        console.log("You win this round!");
-        humanScore++;
+        userChoice === "Paper" && computerChoice === "Rock" ||
+        userChoice === "Scissors" && computerChoice === "Paper") {
+        result = "You win!";
+        userScore++;
     } else {
-        console.log("Computer wins this round!");
+        result = "You lose!";
         computerScore++;
     }
+    playerDisplay.textContent = `PLAYER(${userScore}): ${userChoice}`;
+    computerDisplay.textContent = `COMPUTER(${computerScore}): ${computerChoice}`;
+    resultDisplay.textContent = `Result: ${result}`;
 }
-function playGame(){
-    while(humanScore + computerScore < 5){
-        userChoice = prompt("Rock, Paper, or Scissors? Score: Computer["+computerScore+"] - Player["+humanScore+"]");
-        playRound(userChoice, getComputerChoice());
-    }
 
-}
-playGame();
-if(humanScore > computerScore){
-    prompt("You Win!");
-}else {
-    prompt("Computer Wins!");
-}

@@ -2,10 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Rock-Paper_Scissors</title>
+  <title>Rock-Paper-Scissors</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<script src="index.js">
-</script>
+
+  <h1 class="title">The Game </h1>
+  <h1 class="title">Rock - Paper - Scissors </h1>
+  <div class="buttons">
+    <button class="button" onclick = "playGame('Rock')">🪨</button>
+    <button class="button" onclick = "playGame('Paper')">📃</button>
+    <button class="button" onclick = "playGame('Scissors')">✂️</button>
+  </div>
+  <div class="result">
+    <div id = "userScore">Player:</div>
+    <div id = "computerScore">Computer:</div>
+    <div id = "result">Result:</div>
+  </div>
+  <script src="index.js">
+  </script>
 </body>
 </html>

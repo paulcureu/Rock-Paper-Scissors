@@ -1,0 +1,19 @@
+.title{
+    text-align: center;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.button{
+    margin: 10px;
+    cursor: pointer;
+    padding:50px;
+    font-size: 100px;
+    border-radius: 1000px;
+    border:none;
+}
+#userScore, #computerScore, #result{
+    font-size:3.5rem;
+}
